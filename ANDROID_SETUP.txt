@@ -1,0 +1,14 @@
+CAPTAIN TANMAY v2 — ANDROID SETUP
+
+1) Extract this ZIP on a computer or phone. Keep index.html, manifest.json, sw.js, icon-192.png and icon-512.png together in the same folder.
+2) To install as an Android home-screen app, first host the folder on an HTTPS static host (for example, GitHub Pages). A local file opened with file:// cannot install as a PWA.
+3) Open the hosted site in Google Chrome on Android. Tap ⋮ > Install app or Add to Home screen. Confirm. Launch it from the new icon.
+4) Visit once while online so the app shell can be cached for offline opening. Internet may still be needed for first load or future updates.
+
+IMPORTANT DATA MIGRATION
+- Before switching from the old build, open it and use Settings > Export backup.
+- Open the new hosted build, then Settings > Import backup and select that JSON file.
+- Browser data is separated by website origin, so old local/file-based data may not automatically appear on the hosted site.
+- Export backups regularly. Uploaded workout videos are stored separately in IndexedDB and are NOT included in the JSON backup. If browser storage is cleared or the site origin changes, videos may be lost.
+
+This is an installable PWA, not a native APK or Play Store app. Critical alarms should still use Android Clock.
