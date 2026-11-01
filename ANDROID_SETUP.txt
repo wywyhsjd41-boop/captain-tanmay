@@ -1,14 +1,26 @@
-CAPTAIN TANMAY v2 — ANDROID SETUP
+CAPTAIN TANMAY v4 — ANIME WORLDS UPDATE
 
-1) Extract this ZIP on a computer or phone. Keep index.html, manifest.json, sw.js, icon-192.png and icon-512.png together in the same folder.
-2) To install as an Android home-screen app, first host the folder on an HTTPS static host (for example, GitHub Pages). A local file opened with file:// cannot install as a PWA.
-3) Open the hosted site in Google Chrome on Android. Tap ⋮ > Install app or Add to Home screen. Confirm. Launch it from the new icon.
-4) Visit once while online so the app shell can be cached for offline opening. Internet may still be needed for first load or future updates.
+WHAT'S NEW
+- Naruto / Uchiha world: Madara-inspired spectral armour silhouette, Itachi-inspired crow flight, crimson moon and genjutsu-style atmosphere.
+- Attack on Titan world: fortified wall scene, giant Titan silhouette, Eren Yeager and Commander Erwin references, and all nine Titan powers listed in the world details.
+- My Hero Academia world: hero academy skyline, animated green Full Cowling-style energy, Izuku Midoriya / One For All and All Might references.
+- Illustrated world scenes appear across Home, Study, Planner, Workout, Worlds and Finale. Each world also changes its page atmosphere, cards, buttons, progress bars and bottom navigation styling.
+- Every world has a free Preview button. Preview does not unlock the world, spend TCoins or change saved study data. Permanent activation still follows the Naruto → AOT → MHA order and the existing TCoins / work-log requirements.
+- Existing study tracker functions, chapter progress, rewards, planner, workout logs and video upload are retained.
+- Existing localStorage key `captainTanmay_v1` is unchanged. Service-worker cache version is bumped to v4 to request the new app shell.
 
-IMPORTANT DATA MIGRATION
-- Before switching from the old build, open it and use Settings > Export backup.
-- Open the new hosted build, then Settings > Import backup and select that JSON file.
-- Browser data is separated by website origin, so old local/file-based data may not automatically appear on the hosted site.
-- Export backups regularly. Uploaded workout videos are stored separately in IndexedDB and are NOT included in the JSON backup. If browser storage is cleared or the site origin changes, videos may be lost.
+UPDATE AN EXISTING GITHUB PAGES APP
+1. In the currently installed app, open More → Export backup before updating. This is a safety copy.
+2. Extract this ZIP. The ZIP contains the app files at its top level: index.html, manifest.json, sw.js, icon-192.png and icon-512.png.
+3. Open your existing GitHub repository → Add file → Upload files.
+4. Upload these extracted files to the repository root (the same level as the existing index.html), replacing files with the same names. Do not upload the ZIP itself and do not put the files inside an extra folder.
+5. Commit changes. Keep the repository name and GitHub Pages URL unchanged.
+6. Wait for the GitHub Pages deployment to finish. Open the same app URL in Chrome, reload it, then close and reopen the installed home-screen app. The service worker should install the v4 cache and remove the previous app-shell cache.
 
-This is an installable PWA, not a native APK or Play Store app. Critical alarms should still use Android Clock.
+DATA SAFETY
+- Updating files at the same GitHub Pages URL keeps the same browser origin, so the existing app's localStorage study data and IndexedDB workout videos should remain in place. Still export a JSON backup first.
+- Do not clear Chrome/site storage or uninstall the app during the update.
+- Uploaded workout videos are stored separately in IndexedDB and are not included in the JSON backup. Keep the same site URL/origin to retain them.
+- If data is missing after update, use More → Import backup. Video files cannot be restored from the JSON backup.
+
+This is an installable Progressive Web App (PWA), not a native APK or Play Store app. Original anime-inspired vector environments are used; they are not official character artwork or 3D game animations.
